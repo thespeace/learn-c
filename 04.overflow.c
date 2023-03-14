@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include <limits.h> // 라이브러리의 변수명을 통해 정수형의 유효범위를 알아내기 위해 사용합니다.  
+#include <limits.h> // 라이브러리의 변수명을 통해 정수형의 유효범위를 알아내기 위해 사용합니다. 즉 한계값(최댓값, 최소값)을 알아내기 위해 사용합니다. 
 
 int main(void){
-	int x = INT_MAX; // INT_MAX : limits.h 라이브러리의 변수명으로 "int의 최대값"을 나타냅니다. 
-	printf("%d", x);
+	int x = INT_MAX; // INT_MAX : limits.h 라이브러리의 변수명으로 "int의 최대값"을 나타냅니다.
+	printf("int형의 최댓값 x는 %d입니다.\n", x);
+	printf("x + 1은 %d입니다.\n", x + 1); // 최대값을 넘어버리면 한바퀴를 건너 뛰어 최소값으로 돌아갑니다. == Overflow
 	return 0;
-} 
-
+}
+ 
 
 
 /*  	"limits.h"
