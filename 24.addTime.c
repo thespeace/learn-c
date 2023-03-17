@@ -5,12 +5,22 @@ int hour;
 int minute;
 int minuteAdd;
 
-int counter(){ // function의 기본구조 : 반환형 함수의이름 (매개변수) { 실행될 코드 }; 
-	
+void counter(){ // function의 기본구조 : 반환형 함수의이름 (매개변수) { 실행될 코드 };  , 전역변수를 이용하기 때문에 반환값이 필요 없는 형태인 함수여서 void 반환형을 사용해줍니다. 
+	minute += minuteAdd;
+	hour += minute / 60;
+	minute %= 60;
+	hour %= 24;
 }
  
 int main(void){
-	
+	printf("시를 입력하세요 : ");
+	scanf("%d", &hour);
+	printf("분을 입력하세요 : ");
+	scanf("%d", &minute);
+	printf("더할 분을 입력하세요 : ");
+	scanf("%d", &minuteAdd);
+	counter();
+	printf("더해진 시간은 %d시 %d분 입니다.\n", hour, minute);
 	return 0;
 }
 
