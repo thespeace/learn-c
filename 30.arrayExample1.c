@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <limits.h>
 #define NUMBER 5
+
 
 int main(void){
 	int i, max, min, index;
@@ -8,15 +10,27 @@ int main(void){
 	index = 0;
 	// array[0] ~ array[4] : 총 5개가 들어갈 수 있는 크기의 배열이 선언되었습니다.
 	
+	//최댓값 구하기. 
 	for(i = 0; i < NUMBER; i++){
 		scanf("%d", &array[i]);
 		if(max < array[i]){
 			max = array[i];
-			index = 1;
+			index = i;
 		}
 	} 
-	printf("가장 큰 값은 %d입니다. 그리고 %d번째에 위치해 있습니다.", max, index + 1);
+	printf("가장 큰 값은 %d입니다. 그리고 %d번째에 위치해 있습니다.\n", max, index + 1);
 	
+	min = INT_MAX;
+	//최솟값 구하기. 
+	for(i = 0; i < NUMBER; i++){
+		scanf("%d", &array[i]);
+		if(min > array[i]){
+			min = array[i];
+			index = i;
+		}
+	} 
+	
+	printf("가장 작은 값은 %d입니다. 그리고 %d번째에 위치해 있습니다.", min, index + 1);
 	return 0;
 }
 
