@@ -8,7 +8,7 @@ int main(void){
 	oddMax = 0;
 	evenMax = 0;
 	for(i = 0; i < NUMBER; i++){
-		scanf("%d", &array[i]);
+		scanf("정수 다섯개를 입력해주세요.%d", &array[i]);
 		if(array[i] % 2 == 0){
 			if(evenMax < array[i]){
 				evenMax = array[i];
